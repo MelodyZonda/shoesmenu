@@ -1,0 +1,319 @@
+/* 基础重置与字体 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部导航样式 */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#paypal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #003087, #009cde);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 48, 135, 0.2);
+}
+
+#paypal-link:hover {
+    background: linear-gradient(135deg, #009cde, #003087);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 48, 135, 0.3);
+}
+
+#paypal-link i {
+    font-size: 1.5rem;
+}
+
+header h1 {
+    color: #222;
+    font-size: 2.2rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* 主内容区 */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2d3436;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #636e72;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.product-gallery h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+}
+
+.instruction {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* 产品容器 */
+.shoe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* 单个产品卡片 */
+.shoe-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.shoe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.shoe-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.shoe-info {
+    padding: 1.2rem;
+}
+
+.shoe-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: #2d3436;
+}
+
+.shoe-info p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 加载和错误状态 */
+.loading, .error, .no-shoes {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+/* 图片占位符 */
+.shoe-image-placeholder {
+    width: 100%;
+    height: 220px;
+    background: #e9ecef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #adb5bd;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.shoe-image-placeholder i {
+    font-size: 2.5rem;
+}
+
+.shoe-image-placeholder span {
+    font-size: 0.85rem;
+}
+
+/* 图片加载失败时的样式 */
+.img-broken .shoe-image {
+    display: none;
+}
+
+.img-broken::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 220px;
+    background: #e9ecef;
+}
+
+/* 详情页特定样式 (也会被product.html使用) */
+.back-button {
+    display: inline-block;
+    background: #6c757d;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #5a6268;
+}
+
+/* 页脚 */
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* === 详情页 specific styles === */
+.product-detail h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2d3436;
+}
+
+.detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .detail-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.detail-image-frame {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.detail-image:hover {
+    transform: scale(1.05);
+}
+
+.detail-description {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.detail-description h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2d3436;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+.detail-description > p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 2rem;
+}
+
+.fake-specs {
+    background: #e9f7fe;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.fake-specs h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0056b3;
+}
+
+.fake-specs ul {
+    list-style-position: inside;
+    color: #333;
+}
+
+.fake-specs li {
+    margin-bottom: 0.5rem;
+}

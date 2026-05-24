@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Vomero - Premium Shoe Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 从PayPal官网引入官方品牌图标 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/pp32.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- 左上角PayPal图标，点击跳转到您提供的链接 -->
+            <a id="paypal-link" href="https://paypal.me/xiaozhuo216" target="_blank" aria-label="Support us on PayPal">
+                <i class="fab fa-cc-paypal"></i> PayPal.Me
+            </a>
+            <h1>Nike Vomero Collection</h1>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-gallery">
+            <h2>Featured Products</h2>
+            <p class="instruction">Click on any shoe to view its details.</p>
+            <!-- 产品展示区将由JavaScript动态生成 -->
+            <div id="shoe-container" class="shoe-container">
+                <!-- 内容由 script.js 动态加载 -->
+                <p class="loading">Loading our awesome shoes...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Nike Vomero. This is a static demonstration site. All product images are for illustrative purposes.</p>
+    </footer>
+
+    <!-- Data manifest (must load before script.js) -->
+    <script src="shoe-data.js"></script>
+    <!-- Main page logic -->
+    <script src="script.js"></script>
+</body>
+</html>
